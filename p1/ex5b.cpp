@@ -2,8 +2,7 @@
 
 using namespace std;
 
-class Time
-{
+class Time {
     private:
         int day;
         int hour;
@@ -13,7 +12,7 @@ class Time
     public:
         Time() {}
 
-        Time(int h, int m, int s, int d = 0){
+        Time(int h, int m, int s, int d = 0) {
             this->hour = h;
             this->minute = m;
             this->second = s;
@@ -24,7 +23,7 @@ class Time
     friend Time operator+ (Time lhs, Time rhs);
 };
 
-Time operator+ (Time lhs, Time rhs){
+Time operator+ (Time lhs, Time rhs) {
 
     Time t;
 
@@ -62,13 +61,14 @@ ostream& operator<< (ostream& out, Time t) {
 int main() {
 
     int h, m, s;
+    char c;
 
-    cout << "Time1 (hours minutes seconds) ? ";
-    cin >> h >> m >> s;
+    cout << "Time1 (hours:minutes:seconds) ? ";
+    cin >> h >> c >> m >> c >> s;
     Time t1 = Time(h, m, s);
 
-    cout << "Time2 (hours minutes seconds) ? ";
-    cin >> h >> m >> s;
+    cout << "Time2 (hours:minutes:seconds) ? ";
+    cin >> h >> c >> m >> c >> s;
     Time t2 = Time(h, m, s);
 
     cout << "Time1 + Time2 = " << t1 + t2 << endl;
