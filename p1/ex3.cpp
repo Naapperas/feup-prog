@@ -14,7 +14,7 @@ int main() {
     cout << "Sphere density(Kg/m^³): ";
     cin >> density;
 
-    cout << "Sphere mass is equal to: " << (4/3) * density * pow(radius, 3) * M_PI << endl;
+    cout << "Sphere mass is equal to: " << (4.0/3) * density * pow(radius, 3) * M_PI << endl;
 
     return 0;
 }
