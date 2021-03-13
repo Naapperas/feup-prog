@@ -15,7 +15,7 @@ int main(){
 
         if(isPrime(num)) {
             cout << num << endl;
-            cont ++;
+            cont++;
         }
         num++;
     } 

@@ -26,7 +26,6 @@ int main(){
     while (cont > 0) {
         if (isPrime(cont)) {
             num = cont;
-            cout << num << endl;
         }
 
         cont ++;

@@ -34,9 +34,9 @@ int main() {
                 continue;
             }
             
-            op1 = stoi(op1s);
+            op1 = stod(op1s);
             operation = operations[0];
-            op2 = stoi(op2s);
+            op2 = stod(op2s);
 
         } else if (calculatorOperation == "M" || calculatorOperation == "m") {
             

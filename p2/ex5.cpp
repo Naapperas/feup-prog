@@ -1,11 +1,14 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
 int main() {
 
     double a, b, c;
+
+    cout << fixed << setprecision(3);
 
     cout << "Solution of Ax^2 + Bx + C = 0" << endl << "Insert the coefficients ( A B C ): ";
     cin >> a >> b >> c;
