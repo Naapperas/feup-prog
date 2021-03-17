@@ -33,7 +33,7 @@ struct fraction {
     friend bool operator==(fraction frac, double d);
     friend bool operator==(fraction frac, int i);
     friend ostream& operator<<(ostream& out, fraction f);
-    friend istream& operator>>(istream& in, fraction f);
+    friend istream& operator>>(istream& in, fraction &f);
 
 };
 
@@ -121,6 +121,9 @@ fraction operator/(fraction lhs, fraction rhs) {
 
 unsigned int gcd(unsigned a, unsigned b) {
 
+    a = (a < 0) ? -a : a;
+    b = (b < 0) ? -b : b;
+
     if (a == b) 
         return a;
     
@@ -144,9 +147,10 @@ void reduceFraction(int &num, int &den) {
 
 int main(){
 
-    fraction f1 = fraction(1, 2), f2 = fraction(1, 3);
+    fraction f1 = fraction(-1, 2), f2 = fraction(1, 3), f3 = fraction(-1, -2), f4 = fraction(9, 3);
 
-    cout << (f1 - f2) << endl;
+    cout << (f1 - f2) * f3 << endl;
+    cout << (f4 == 3) << endl; 
 
     return 0;
 }
