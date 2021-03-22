@@ -13,14 +13,10 @@ using namespace std;
  * @return false if the value is not present in the vector
  */
 bool inVector(const vector<int> &v, int value, int limit = -1) {
-/*
-    cout << limit << " " << v.size() << " " << (limit > v.size()) << endl;
 
-    if (limit > v.size()) {
-        cout << "AAAAAAAAAAAAAAAAAAAAAAA" << endl;
+    if (limit > (int) v.size())
         throw "'limit' can't be bigger than the size of the vector.";
-    }
-*/
+
     int actualLimit = (limit == -1) ? v.size() : limit; // parsing default arg
 
     for (int i = 0; i < actualLimit; i++)
@@ -53,10 +49,10 @@ void removeFromVector(vector<int> &v, int index) {
  * 
  * @param v the vector to remove duplicates from
  */
-void removeDuplicates(vector<int>& v) {
+void removeDuplicates(vector<int> &v) {
 
     for (int i = 1; i < v.size(); i++)
-        if (inVector(v, v.at(i), i)) // check vector until the current index, if true, then we are a duplicate value
+        if (inVector(v, v.at(i), i)) // check vector until the current index: if true, then we are a duplicate value
             removeFromVector(v, i--); // removes from vector and decreases i
 
 }
@@ -127,8 +123,8 @@ void vectorIntersection(const vector<int> &v1, const vector<int> &v2, vector<int
 
 int main(){
 
-    vector<int> a = {1, 2, 3}, b = {3, 4, 5}, c;
-    vector<int> d = {1, 2, 3}, e = {3, 4, 5}, f;
+    vector<int> a = {1, 2, 3}, b = {2, 3, 4}, c;
+    vector<int> d = {1, 2, 3}, e = {2, 3, 4}, f;
 
     vectorUnion(a, b, c);
     vectorIntersection(d, e, f);
@@ -142,6 +138,6 @@ int main(){
         cout << a << " ";
 
     cout << endl;
-
+        
     return 0;
 }
